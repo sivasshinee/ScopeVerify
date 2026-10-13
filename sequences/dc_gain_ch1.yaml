@@ -1,0 +1,35 @@
+name: dc_gain_accuracy
+channel: 1
+source: MSO1000Z/DS1000Z Performance Verification Guide, chapter 2, DC Gain Accuracy Test
+
+setup:
+  impedance_ohms: 1000000
+  probe_ratio: 1
+  vertical_offset_v: 0
+  horizontal_s_per_div: 0.0001
+  averages: 32
+
+measurement:
+  item: VAVG
+  stimulus_times_scale: 3
+  full_scale_divisions: 8
+
+limits:
+  - below_v_per_div: 0.01
+    max_error_percent: 4
+  - max_error_percent: 3
+
+scales_v_per_div:
+  - 0.001
+  - 0.002
+  - 0.005
+  - 0.01
+  - 0.02
+  - 0.05
+  - 0.1
+  - 0.2
+  - 0.5
+  - 1
+  - 2
+  - 5
+  - 10
